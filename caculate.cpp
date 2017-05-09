@@ -10,7 +10,7 @@ using namespace std;
 
 unordered_map< char, unordered_map < char, char > > Priorities;
 
-void InitPriorities()
+void InitPriorities()//优先级代码
 {
 	Priorities['+']['-'] = '>';
 	Priorities['+']['+'] = '>';
@@ -157,8 +157,8 @@ void Problem::generateExpression()//用于生成运算式
 		}
 		//30% 不加
 	}
-	cout << expression << " = ";
-	writeFile(expression);
+	cout << expression << " = ";//输出算式
+	writeFile(expression);//写入文件中
 	writeFile(" = ");
 	//myfile << expression << " = ";
 	answer = calculateResult();
