@@ -7,20 +7,20 @@ using namespace std;
 int main(int argc,char **argv)
 {
 	string infilepath, outfilepath;
-	if (argc == 3)
+	if (argc == 3)//判断主函数参数个数（避免直接打开报错）
 	{
 		infilepath = argv[1];
 		outfilepath = argv[2];
 	}
-	else cin >> infilepath >> outfilepath;
+	else cin >> infilepath >> outfilepath;//从命令行中输入路径和输出路径
 	srand(time(0));
 	InitPriorities();
 
 	Problem p(infilepath, outfilepath);
-	p.writeFile("计算结果如有小数请保留2位,只舍不入");
+	p.writeFile("计算结果如有小数请保留2位,只舍不入");//写入文件
 	p.writeFile("请输入题目数目\n");
 	p.writeFile("------------------------------------------------\n");
-	int proNum=p.readFile();
+	int proNum=p.readFile();//读入文件
 	p.writeFile(proNum);
 	cout << "计算结果如有小数请保留2位,只舍不入" << endl;
 	cout << "请输入题目数目:";
@@ -37,3 +37,4 @@ int main(int argc,char **argv)
 	return 0;
 }
 
+ 
